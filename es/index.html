@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GridJam — Práctica para Push, Move y Launchpad</title>
+<meta name="description" content="La práctica que no vas a querer soltar. Escalas, acordes, jam y juegos para Push, Move y Launchpad, por Caro Durán.">
+<link rel="canonical" href="https://gridjam.app/es/">
+<link rel="alternate" hreflang="en" href="https://gridjam.app/">
+<link rel="alternate" hreflang="es" href="https://gridjam.app/es/">
+<link rel="alternate" hreflang="x-default" href="https://gridjam.app/">
+<meta property="og:title" content="GridJam — Práctica para Push, Move y Launchpad">
+<meta property="og:description" content="La práctica que no vas a querer soltar. Escalas, acordes, jam y juegos para Push, Move y Launchpad, por Caro Durán.">
+<meta property="og:image" content="https://gridjam.app/media/clip-hero.jpg">
+<meta property="og:url" content="https://gridjam.app/es/">
+<meta name="theme-color" content="#0B0A10">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=Mrs+Saint+Delafield&amp;display=swap">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0B0A10;color:#EDEDEB;font-family:'Archivo','Helvetica Neue',Arial,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:#FFC83D}a:hover{color:#FFD66E}
+.wrap{max-width:1240px;margin:0 auto;padding-left:24px;padding-right:24px}
+.mono{font-family:'IBM Plex Mono',monospace}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:#FFC83D;color:#16120A;font-weight:800;text-decoration:none}
+.btn:hover{background:#FFD66E;color:#16120A}
+.h2{margin:0;text-align:center;font-variation-settings:'wdth' 120;font-weight:900;font-size:clamp(2rem,3.8vw,3.2rem);letter-spacing:-0.025em;line-height:1}
+.muted{color:#C9C6D6}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);font-size:14px;font-weight:600}
+.lang{display:inline-flex;border:1px solid rgba(255,255,255,0.22);border-radius:999px;overflow:hidden}
+.lang a{display:inline-flex;align-items:center;min-height:36px;padding:0 12px;color:#EDEDEB;text-decoration:none;font-size:14px;font-weight:700}
+.lang a[aria-current="true"]{background:#EDEDEB;color:#0B0A10}
+.tall{position:relative;aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:#0B0B0B}
+.tall video,.wide video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;top:18px;left:18px;padding:5px 10px;border-radius:999px;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:0.1em}
+.wide{position:relative;flex:1 1 520px;min-width:0;aspect-ratio:16/10;border-radius:24px;overflow:hidden;background:#0B0B0B;border:1px solid #2A2A2A}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:48px}
+.row .txt{flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.row h3{margin:0;font-variation-settings:'wdth' 120;font-weight:900;font-size:2.2rem;line-height:1.02;letter-spacing:-0.02em}
+.dev{border-radius:20px;border:1px solid #3E3D4A;background:#16151C;padding:28px 20px;display:flex;flex-direction:column;align-items:center;gap:8px}
+.dev b{font-variation-settings:'wdth' 120;font-size:1.6rem;font-weight:900}
+.dev span{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#A9A8B0}
+.tut{margin:0;display:flex;flex-direction:column;gap:10px}
+.tut video{display:block;width:100%;aspect-ratio:16/9;border-radius:16px;background:#000;border:1px solid #3E3D4A}
+.tut span{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#A9A8B0}
+@media (max-width:720px){.navlinks .hide-sm{display:none}}
+@media (prefers-reduced-motion:reduce){video[autoplay]{display:none}}
+</style>
+</head>
+<body>
+
+<section id="top" style="position:relative;overflow:hidden;min-height:760px;display:flex;flex-direction:column;background:#07060B">
+<video src="/media/clip-hero.mp4" poster="/media/clip-hero.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.75"></video>
+<div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,rgba(7,6,11,0.55) 0%,rgba(7,6,11,0.88) 60%,#07060B 100%)"></div>
+<nav class="wrap" style="position:relative;width:100%;padding-top:18px;padding-bottom:18px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
+<a href="/es/" style="display:flex;align-items:baseline;gap:10px;text-decoration:none;color:#EDEDEB">
+<span style="font-variation-settings:'wdth' 120;font-weight:800;font-size:28px;letter-spacing:-0.015em">GridJam</span>
+<span style="font-family:'Mrs Saint Delafield',cursive;font-size:28px;line-height:1;color:#FFC83D;transform:rotate(-3deg);display:inline-block">by Caro Durán</span>
+</a>
+<div class="navlinks" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px">
+<a class="hide-sm" href="#push" style="color:#EDEDEB;text-decoration:none;font-size:15px;font-weight:600">Push</a>
+<a class="hide-sm" href="#move" style="color:#EDEDEB;text-decoration:none;font-size:15px;font-weight:600">Move</a>
+<a class="hide-sm" href="#launchpad" style="color:#EDEDEB;text-decoration:none;font-size:15px;font-weight:600">Launchpad</a>
+<a class="hide-sm" href="#plans" style="color:#EDEDEB;text-decoration:none;font-size:15px;font-weight:600">Planes</a>
+<span class="lang"><a href="/" data-setlang="en" >EN</a><a href="/es/" data-setlang="es" aria-current="true">ES</a></span>
+<a href="https://play.gridjam.app/?lang=es" style="color:#A9A8B0;text-decoration:none;font-size:15px">Entrar</a>
+<a class="btn" href="https://play.gridjam.app/?lang=es" style="min-height:44px;padding:0 20px;font-size:15px">Prueba gratis</a>
+</div>
+</nav>
+<div style="position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:22px;padding:40px 24px 72px">
+<h1 style="margin:0;max-width:15ch;font-variation-settings:'wdth' 125;font-weight:900;font-size:clamp(3rem,7.6vw,6.6rem);line-height:0.95;letter-spacing:-0.03em">La práctica que no vas a querer soltar.</h1>
+<p style="margin:0;font-variation-settings:'wdth' 110;font-weight:700;font-size:clamp(1.2rem,2vw,1.6rem);color:#FFC83D">Para Push, Move y Launchpad.</p>
+<div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+<a class="btn" href="https://play.gridjam.app/?lang=es" style="min-height:60px;padding:0 36px;font-size:19px;box-shadow:0 0 40px -6px rgba(255,200,61,0.6)">Empieza gratis</a>
+<span style="font-size:15px;font-weight:600">3 escalas gratis para empezar</span>
+<a href="#plans" style="font-size:15px;font-weight:600">Ver GridJam Pro →</a>
+</div>
+<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px">
+<span class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg>Navegador</span>
+<span class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"></rect><path d="M11 18h2"></path></svg>iPad</span>
+<span class="chip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"></rect><path d="M11 18h2"></path></svg>Celular</span>
+</div>
+</div>
+</section>
+
+<section class="wrap" style="padding-top:112px;padding-bottom:56px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px">
+<h2 style="margin:0;font-variation-settings:'wdth' 125;font-weight:900;font-size:clamp(2.4rem,5vw,4.4rem);line-height:0.98;letter-spacing:-0.03em">Fácil de empezar.<br><span style="color:#FFC83D">Difícil de soltar.</span></h2>
+<p class="muted" style="margin:0;max-width:36rem;font-size:1.2rem">Seas principiante o ya toques en vivo, GridJam te pone a tocar en el grid desde el primer minuto.</p>
+<a href="https://play.gridjam.app/?lang=es" style="display:inline-flex;align-items:center;min-height:52px;padding:0 28px;border-radius:999px;border:2px solid #FFC83D;color:#FFC83D;font-weight:800;font-size:17px;text-decoration:none">Empieza a tocar</a>
+</section>
+
+<section class="wrap" style="padding-top:40px;padding-bottom:96px">
+<h2 class="h2" style="margin-bottom:36px">Más jam. Menos teoría.</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+<figure style="margin:0;display:flex;flex-direction:column;gap:14px"><div class="tall" style="border:2px solid #FFC83D"><video src="/media/clip-practice.mp4" poster="/media/clip-practice.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video><span class="tag" style="background:rgba(22,18,10,0.88);color:#FFD66E">PRÁCTICA · CONTRA EL RELOJ</span></div>
+<figcaption style="display:flex;flex-direction:column;gap:4px"><b style="font-variation-settings:'wdth' 115;font-size:1.4rem;font-weight:800">Rompe tu propio récord</b><span class="muted">Prende toda la escala cada vez más rápido.</span></figcaption></figure>
+<figure style="margin:0;display:flex;flex-direction:column;gap:14px"><div class="tall" style="border:2px solid #FF5A1F"><video src="/media/clip-golden-note.mp4" poster="/media/clip-golden-note.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video><span class="tag" style="background:rgba(46,14,0,0.88);color:#FFB08A">RACHA · NOTA DORADA</span></div>
+<figcaption style="display:flex;flex-direction:column;gap:4px"><b style="font-variation-settings:'wdth' 115;font-size:1.4rem;font-weight:800">No rompas tu racha</b><span class="muted">Cinco prácticas llenan tu nota dorada del día.</span></figcaption></figure>
+<figure style="margin:0;display:flex;flex-direction:column;gap:14px"><div class="tall" style="border:2px solid #2F5BFF"><video src="/media/clip-fingering.mp4" poster="/media/clip-fingering.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video><span class="tag" style="background:rgba(8,16,60,0.88);color:#A9C1FF">DIGITACIÓN EN CADA PAD</span></div>
+<figcaption style="display:flex;flex-direction:column;gap:4px"><b style="font-variation-settings:'wdth' 115;font-size:1.4rem;font-weight:800">Toca con el método de Caro</b><span class="muted">El número en el pad te dice qué dedo usar.</span></figcaption></figure>
+</div>
+</section>
+
+<section style="background:#16151C;border-top:1px solid #25242E;border-bottom:1px solid #25242E">
+<div class="wrap" style="padding-top:104px;padding-bottom:104px;display:flex;flex-direction:column;gap:88px">
+<h2 class="h2">Todo lo que tu grid necesita.</h2>
+<div class="row"><div class="wide" style="box-shadow:0 0 60px -24px rgba(47,91,255,0.6)"><video src="/media/clip-scales.mp4" poster="/media/clip-scales.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
+<div class="txt"><span class="mono" style="font-size:12px;letter-spacing:0.14em;color:#5B82FF">ESCALAS · ARPEGIOS</span><h3>Una escala para cada obsesión.</h3><p class="muted" style="margin:0;font-size:1.1rem">Mayores, menores y modos en tres patterns que se encadenan. Arpegios de dos octavas, de negras a semicorcheas.</p></div></div>
+<div class="row" style="flex-wrap:wrap-reverse"><div class="txt"><span class="mono" style="font-size:12px;letter-spacing:0.14em;color:#FF7A45">ACORDES · PROGRESIONES</span><h3>Suena como músico, no como principiante.</h3><p class="muted" style="margin:0;font-size:1.1rem">Tríadas, inversiones y progresiones con conducción de voces en las 24 tonalidades.</p></div>
+<div class="wide" style="box-shadow:0 0 60px -24px rgba(255,90,31,0.6)"><video src="/media/clip-chords.mp4" poster="/media/clip-chords.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video></div></div>
+<div class="row"><div class="wide" style="box-shadow:0 0 60px -24px rgba(107,61,240,0.7)"><video src="/media/clip-jam.mp4" poster="/media/clip-jam.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
+<div class="txt"><span class="mono" style="font-size:12px;letter-spacing:0.14em;color:#8A63FF">JAM · JUEGOS</span><h3>Toca sobre una base. Aprende el grid de memoria.</h3><p class="muted" style="margin:0;font-size:1.1rem">Jam guiado en distintos estilos, y juegos como “Encuéntrala” y “¿Qué nota es?” para no volver a perderte en los pads.</p></div></div>
+<div style="display:flex;justify-content:center"><a class="btn" href="https://play.gridjam.app/?lang=es" style="min-height:56px;padding:0 32px;font-size:18px">Prueba gratis</a></div>
+</div>
+</section>
+
+<section class="wrap" style="padding-top:96px;padding-bottom:40px;text-align:center">
+<h2 class="h2" style="margin-bottom:12px">Conéctalo y listo.</h2>
+<p class="muted" style="margin:0 0 36px;font-size:1.1rem">GridJam detecta tu controlador y prende los pads. Sin instalar nada.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+<div id="push" class="dev"><b>Push</b><span>8 × 8 · luces y sonido</span></div>
+<div id="move" class="dev"><b>Move</b><span>4 filas · calibración automática</span></div>
+<div id="launchpad" class="dev"><b>Launchpad</b><span>8 × 8 · detección automática</span></div>
+<div class="dev" style="background:transparent;border-style:dashed"><b>Sin controlador</b><span>pantalla táctil o teclado</span></div>
+</div>
+</section>
+
+<section class="wrap" style="padding-top:96px;padding-bottom:40px">
+<h2 class="h2" style="margin-bottom:12px">Míralo en acción.</h2>
+<p class="muted" style="margin:0 0 36px;text-align:center;font-size:1.1rem">Gente real tocando en su grid. Dale play.</p>
+<figure style="max-width:960px;margin:0 auto 48px;display:flex;flex-direction:column;gap:14px">
+<video src="/media/testimonial-jelie.mp4" poster="/media/testimonial-jelie.jpg" controls playsinline preload="metadata" aria-label="Testimonio de Jelie sobre GridJam" style="display:block;width:100%;aspect-ratio:16/9;border-radius:24px;background:#000;border:1px solid #3E3D4A;box-shadow:0 0 80px -30px rgba(47,91,255,0.7)"></video>
+<figcaption style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px"><b style="font-variation-settings:'wdth' 115;font-size:1.3rem;font-weight:800">Jelie cuenta cómo practica con GridJam</b><span class="mono" style="font-size:12px;color:#A9A8B0">Push · Escalas · en inglés</span></figcaption>
+</figure>
+<p class="muted" style="margin:0 0 8px;text-align:center;font-size:1.1rem">Tutoriales paso a paso. Mira uno y toca al mismo tiempo.</p>
+<p class="mono" style="margin:0 0 24px;text-align:center;font-size:13px;color:#FFD66E">Tutoriales en inglés · versión en español muy pronto</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px">
+<figure class="tut"><video src="/media/tutorial-getting-started.mp4" poster="/media/tutorial-getting-started.jpg" controls playsinline preload="none" aria-label="Primeros pasos"></video><b style="font-size:15px">Primeros pasos</b><span>Tutorial · 2 min</span></figure>
+<figure class="tut"><video src="/media/tutorial-scales-arps.mp4" poster="/media/tutorial-scales-arps.jpg" controls playsinline preload="none" aria-label="Escalas y arpegios"></video><b style="font-size:15px">Escalas y arpegios</b><span>Tutorial · 2.5 min</span></figure>
+<figure class="tut"><video src="/media/tutorial-chords.mp4" poster="/media/tutorial-chords.jpg" controls playsinline preload="none" aria-label="Acordes y progresiones"></video><b style="font-size:15px">Acordes y progresiones</b><span>Tutorial · 2.5 min</span></figure>
+<figure class="tut"><video src="/media/tutorial-jam.mp4" poster="/media/tutorial-jam.jpg" controls playsinline preload="none" aria-label="Jam sobre una base"></video><b style="font-size:15px">Jam sobre una base</b><span>Tutorial · 1.5 min</span></figure>
+<figure class="tut"><video src="/media/tutorial-practice.mp4" poster="/media/tutorial-practice.jpg" controls playsinline preload="none" aria-label="Práctica y nota dorada"></video><b style="font-size:15px">Práctica y nota dorada</b><span>Tutorial · 3 min</span></figure>
+</div>
+</section>
+
+<section class="wrap" style="padding-top:96px;padding-bottom:96px">
+<div class="row">
+<img src="/media/caro-teaching.jpg" alt="Caro Durán enseñando con el Push de Ableton" loading="lazy" style="flex:0 1 380px;min-width:240px;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px;display:block;box-shadow:0 0 80px -30px rgba(107,61,240,0.7)">
+<div style="flex:1 1 440px;min-width:0;display:flex;flex-direction:column;gap:20px">
+<p style="margin:0;font-variation-settings:'wdth' 115;font-weight:800;font-size:clamp(1.7rem,3vw,2.5rem);line-height:1.15;letter-spacing:-0.015em">“Construí GridJam porque vi a mis estudiantes perderse en el grid. Diez minutos al día con el método correcto lo cambian todo.”</p>
+<span style="font-family:'Mrs Saint Delafield',cursive;font-size:52px;line-height:1;color:#FFC83D;transform:rotate(-3deg);transform-origin:left;display:inline-block">Caro Durán</span>
+<span class="mono" style="font-size:13px;color:#A9A8B0">Ableton Certified Trainer · Faculty, Berklee College of Music</span>
+</div>
+</div>
+</section>
+
+<section id="plans" class="wrap" style="padding-top:40px;padding-bottom:40px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;max-width:900px;margin:0 auto">
+<div style="background:#16151C;border:1px solid #3E3D4A;border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:12px">
+<b style="font-variation-settings:'wdth' 120;font-size:1.6rem;font-weight:900">Gratis</b><span class="muted">3 escalas para empezar a practicar hoy.</span>
+</div>
+<div style="background:#1C1B24;border:2px solid #FFC83D;border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:12px">
+<b style="font-variation-settings:'wdth' 120;font-size:1.6rem;font-weight:900">GridJam Pro</b><span class="muted">Las 24 tonalidades en todas las secciones.</span>
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:6px">
+<div style="flex:1 1 140px;border-radius:16px;border:1px solid #3E3D4A;padding:14px 16px;display:flex;flex-direction:column;gap:2px"><span class="mono" style="font-size:11px;letter-spacing:0.12em;color:#A9A8B0">MENSUAL</span><b style="font-variation-settings:'wdth' 115;font-size:1.7rem;font-weight:900">US$7.99<span style="font-size:0.95rem;font-weight:500;color:#A9A8B0"> /mes</span></b></div>
+<div style="flex:1 1 140px;border-radius:16px;border:1px solid #FFC83D;background:rgba(255,200,61,0.08);padding:14px 16px;display:flex;flex-direction:column;gap:2px"><span class="mono" style="font-size:11px;letter-spacing:0.12em;color:#FFD66E">ANUAL · AHORRA 28%</span><b style="font-variation-settings:'wdth' 115;font-size:1.7rem;font-weight:900">US$69<span style="font-size:0.95rem;font-weight:500;color:#A9A8B0"> /año</span></b><span style="font-size:13px;color:#FFD66E">Menos de US$6 al mes</span></div>
+</div>
+<span class="mono" style="font-size:12px;color:#A9A8B0">Cancela cuando quieras.</span>
+</div>
+</div>
+</section>
+
+<section class="wrap" style="padding-top:72px;padding-bottom:104px">
+<div style="border-radius:32px;background:#FFC83D;color:#16120A;padding:80px 40px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px">
+<h2 style="margin:0;font-variation-settings:'wdth' 125;font-weight:900;font-size:clamp(2.4rem,5vw,4.6rem);letter-spacing:-0.03em;line-height:0.95">Empieza gratis hoy.<br>Tu grid te está esperando.</h2>
+<a href="https://play.gridjam.app/?lang=es" style="display:inline-flex;align-items:center;min-height:60px;padding:0 36px;border-radius:999px;background:#16120A;color:#FFD66E;font-weight:800;font-size:19px;text-decoration:none">Empieza gratis</a>
+<span class="mono" style="font-size:13px;color:#3A2C0A">Navegador · iPad · Celular · Push · Move · Launchpad</span>
+</div>
+</section>
+
+<footer style="border-top:1px solid #25242E">
+<div class="wrap mono" style="padding-top:32px;padding-bottom:32px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;color:#A9A8B0;font-size:13px">
+<span>© 2026 GridJam · gridjam.app</span>
+<span style="display:flex;flex-wrap:wrap;gap:20px"><a href="mailto:team@gridjam.app">team@gridjam.app</a><a href="https://instagram.com/grid.jam">@grid.jam</a></span>
+</div>
+</footer>
+<script>
+document.querySelectorAll('[data-setlang]').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('gj-lang',a.getAttribute('data-setlang'))}catch(e){}});});
+</script>
+</body>
+</html>
